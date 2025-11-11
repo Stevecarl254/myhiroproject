@@ -11,14 +11,12 @@ const Navbar: React.FC = () => {
   const [active, setActive] = useState<string>("Home");
   const dropdownRef = useRef<HTMLDivElement>(null);
 
-  // Scroll effect for background blur
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 20);
     window.addEventListener("scroll", handleScroll);
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  // Close dropdown when clicking outside
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       if (
@@ -40,18 +38,19 @@ const Navbar: React.FC = () => {
 
   const navItems = [
     { name: "Home", path: "/" },
-    { name: "Services", path: "#", dropdown: true },
     { name: "About", path: "/about" },
+    { name: "Services", path: "#", dropdown: true },
     { name: "Gallery", path: "/gallery" },
     { name: "Contact", path: "/contact" },
   ];
 
+  // Updated services array with paths
   const services = [
-    "Hiring of Catering Equipment",
-    "Short Term Waiters / Waitress & Hostess",
-    "Corporate Services",
-    "Catering & Hospitality Services",
-    "Repairing Catering Equipment",
+    { name: "Hiring of Catering Equipment", path: "/services/hiring-catering-equipment" },
+    { name: "Short Term Waiters / Waitress & Hostess", path: "/services/short-term-waiters" },
+    { name: "Corporate Services", path: "/services/corporate-services" },
+    { name: "Catering & Hospitality Services", path: "/services/catering-hospitality-services" },
+    { name: "Repairing Catering Equipment", path: "/services/repairing-catering-equipment" },
   ];
 
   return (
@@ -101,12 +100,12 @@ const Navbar: React.FC = () => {
                 >
                   {services.map((service) => (
                     <Link
-                      key={service}
-                      href="#"
+                      key={service.name}
+                      href={service.path}
                       onClick={() => handleLinkClick("Services")}
                       className="block px-4 py-2 text-sm text-[#001f3f] hover:bg-gray-100 rounded-md"
                     >
-                      {service}
+                      {service.name}
                     </Link>
                   ))}
                 </div>
