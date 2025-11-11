@@ -92,14 +92,15 @@ export default function ServicesSection() {
           ))}
         </motion.div>
 
-        {/* View More Button */}
-        <div className="mt-16">
-          <Link href="/services">
-            <button className="bg-[#001f3f] text-white px-10 py-3 rounded-full font-semibold text-lg hover:bg-[#00b8e6] hover:text-[#001f3f] transition-all duration-300 shadow-lg">
-              View More Services
-            </button>
-          </Link>
-        </div>
+  {/* View More Button */}
+<div className="mt-16">
+  <Link href="/services/short-term-waiters">
+    <button className="bg-[#001f3f] text-white px-10 py-3 rounded-full font-semibold text-lg hover:bg-[#00b8e6] hover:text-[#001f3f] transition-all duration-300 shadow-lg">
+      View More Services
+    </button>
+  </Link>
+</div>
+
       </div>
     </section>
   );
