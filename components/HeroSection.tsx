@@ -45,7 +45,7 @@ export default function HeroSection() {
           occasion.
         </p>
 
-        <Link href="/contact">
+        <Link href="get-quote">
           <button className="bg-[#001f3f] text-white px-8 py-3 rounded-md font-semibold text-lg hover:bg-[#005f99] transition-all duration-300 shadow-md">
             Get a Quote
           </button>
